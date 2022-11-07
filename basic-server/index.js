@@ -9,17 +9,20 @@ app.set("view engine", "ejs")
 app.set("views", path.join(__dirname, "views"))
 
 app.get('/', (req, res) => {
-    res.render("home")
+    res.render("userform")
 })
 
 app.get('/about', (req, res) => {
-    res.send(`<h1>About.</h1>`)
-})   
+    res.render("home")
+})
 
 app.get('/contact', (req, res) => {
     res.send(`<h1>Contact.</h1>`)
 })
 
+app.post('/result', (req, res) => {
+    res.send(req.body.color)
+})
 app.listen(port, () => {
     console.log('Listening')
 })

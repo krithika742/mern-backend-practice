@@ -1,0 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Courier New', Courier, monospace;
+    color: purple;
+    padding:1rem;
+}
+
+form *{
+    color: purple;
+}
+
+button {
+    padding: 5
+}
