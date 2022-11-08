@@ -2,9 +2,12 @@ const express = require('express')
 const app = express();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-require('dotenv/config');
+const cors = require('cors');
 
+require('dotenv/config');
+//Middleware
 app.use(bodyParser.json());
+app.use(cors());
 
 //Import Routes
 const postsRoute = require('./routes/posts');
@@ -25,3 +28,11 @@ mongoose.connect(process.env.DB_CONNECTION, {
 app.listen(5000, () => {
     console.log("Running")
 })
+
+// Code to fetch data and console.log it
+// fetch('http://localhost:5000/posts')
+// .then(result =>{
+// return result.json();
+// }).then(data => {
+// console.log(data);
+// })
